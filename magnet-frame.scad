@@ -5,7 +5,7 @@ $fn=6;
 //$fn=100;
 
 PictureSize = [50,50,5];  
-Padding = 7;
+Padding = 6;
 
 PaddingBorderWidth = 3;
 PaddingBorderDepth = 3;
