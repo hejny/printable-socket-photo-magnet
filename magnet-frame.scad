@@ -4,10 +4,10 @@
 //$fn=6;
 $fn=100;
 
-PictureSize = [50,50,7];  
+PictureSize = [50,50,8];  
 Padding = 6;
 
-PaddingBorderWidth = 3;
+PaddingBorderWidth = 4;
 PaddingBorderDepth = 3;
 
 
@@ -15,7 +15,7 @@ MagnetsCount = 1;
 MagnetsOffcenterShift = 0;
 
 MagnetDiameter = 20+2;
-MagnetDepth = 5+1;
+MagnetDepth = 5+2;
 
 
 
