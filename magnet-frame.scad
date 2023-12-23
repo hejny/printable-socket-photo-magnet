@@ -8,13 +8,13 @@ PictureSize = [50,50,7];
 Padding = 6;
 
 PaddingBorderWidth = 3;
-PaddingBorderDepth = 2;
+PaddingBorderDepth = 3;
 
 
 MagnetsCount = 1;
 MagnetsOffcenterShift = 0;
 
-MagnetDiameter = 20+3;
+MagnetDiameter = 20+2;
 MagnetDepth = 5+1;
 
 
