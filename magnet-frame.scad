@@ -1,21 +1,21 @@
 
  include <shapes/roundedcube.scad>
 
-$fn=6;
-//$fn=100;
+//$fn=6;
+$fn=100;
 
-PictureSize = [50,50,5];  
+PictureSize = [50,50,7];  
 Padding = 6;
 
 PaddingBorderWidth = 3;
 PaddingBorderDepth = 3;
 
 
-MagnetsCount = 3;
-MagnetsOffcenterShift = 15;
+MagnetsCount = 1;
+MagnetsOffcenterShift = 0;
 
-MagnetDiameter = 4;
-MagnetDepth = 4;
+MagnetDiameter = 20+1;
+MagnetDepth = 5+1;
 
 
 
