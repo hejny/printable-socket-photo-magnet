@@ -1,15 +1,21 @@
-//$fn=10;
- $fn=100;
+
+ include <shapes/roundedcube.scad>
+
+$fn=6;
+//$fn=100;
 
 PictureSize = [50,50,5];  
-Padding = 5;
+Padding = 7;
+
+PaddingBorderWidth = 3;
+PaddingBorderDepth = 3;
 
 
-MagnetsCount = 5;
+MagnetsCount = 3;
 MagnetsOffcenterShift = 15;
 
 MagnetDiameter = 4;
-MagnetHeight = 2;
+MagnetDepth = 4;
 
 
 
@@ -19,23 +25,51 @@ MagnetHeight = 2;
 
 
 module base() {
-     cube(PictureSize, center=true);
-
+    cube(PictureSize, center=true);
 
     difference() {
+
         cube([
             PictureSize.x+ Padding*2,
             PictureSize.y+ Padding*2,
             PictureSize.z
         ], center=true);
-    
 
-
-    
-        translate([0,0,PictureSize.z-3]) {
+        /*/
+        difference() {
             cube([
-                PictureSize.x+2,
-                PictureSize.y+2,
+                PictureSize.x+ Padding*2,
+                PictureSize.y+ Padding*2,
+                PictureSize.z
+            ], center=true);
+
+            translate([PictureSize.x/2+Padding,PictureSize.y/2+Padding,0]) {
+                cylinder(h=10,r=10);
+            }
+        }
+        /**/
+
+        /*/
+        roundedcube(
+            size = [
+                PictureSize.x+ Padding*2,
+                PictureSize.y+ Padding*2,
+                PictureSize.z
+            ],
+            center = true,
+            radius = 5,
+            apply_to = "z"
+        )
+        /**/
+        
+    
+
+
+    
+        translate([0,0,PictureSize.z-PaddingBorderDepth]) {
+            cube([
+                PictureSize.x+PaddingBorderWidth*2,
+                PictureSize.y+PaddingBorderWidth*2,
                 PictureSize.z
 
 
@@ -54,8 +88,8 @@ module basePlaced() {
 }
 
 module magnetCenteredPlaced() {
-    translate([0,0,PictureSize.z-MagnetHeight]) {
-        cylinder(h=MagnetHeight,r=MagnetDiameter/2);  
+    translate([0,0,PictureSize.z-MagnetDepth]) {
+        cylinder(h=MagnetDepth,r=MagnetDiameter/2);  
     }
 }
 
